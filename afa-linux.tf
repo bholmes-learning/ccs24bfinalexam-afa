@@ -18,7 +18,7 @@ resource "azurerm_linux_function_app" "bhmcitafalinux01" {
   name                = "braedenmcitfunction"
   resource_group_name = azurerm_resource_group.bhmcitrg01.name
   location            = azurerm_resource_group.bhmcitrg01.location
-  service_plan_id     = azurerm_service_plan.bhmcitafalinux01.id
+  service_plan_id     = azurerm_service_plan.bhmcitrg01.id
 
   site_config {}
 }
