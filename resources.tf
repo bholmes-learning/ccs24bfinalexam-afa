@@ -3,8 +3,8 @@ resource "azurerm_resource_group" "bhmcitrg01" {
   location = "canadacentral"
 }
 
-resource "azurerm_service_plan" "bhmcitasp01" {
-  name     = "braedenmcitazsp01"
+resource "azurerm_service_plan" "bhmcitasplinux01" {
+  name                = "braedenmcitappserviceplan"
   resource_group_name = azurerm_resource_group.bhmcitrg01.name
   location            = azurerm_resource_group.bhmcitrg01.location
   os_type             = "Linux"
