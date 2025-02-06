@@ -28,7 +28,7 @@ resource "azurerm_storage_account" "mbraedenmcitsa" {
   account_replication_type = "GRS"
 }
 
-  site_config {    
+site_config {    
     always_on = true
     application_stack {
       current_stack  = "node"
