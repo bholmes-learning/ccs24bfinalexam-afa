@@ -27,6 +27,3 @@ resource "azurerm_storage_account" "bhmcitstorage" {
   service_plan_id            = azurerm_service_plan.bhmcitstorage.id
 }
 
-site_config {
-  }
-}
