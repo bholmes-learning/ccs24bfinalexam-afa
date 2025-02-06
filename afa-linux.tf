@@ -30,5 +30,9 @@ resource "azurerm_storage_account" "mbraedenmcitsa" {
   tags = {
     environment = "staging"
 
-    site_config {}
+  site_config {    
+    always_on = true
+    application_stack {
+      current_stack  = "node"
+      #node_version = "16-LTS"}
 }
