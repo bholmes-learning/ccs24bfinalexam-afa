@@ -26,6 +26,7 @@ resource "azurerm_storage_account" "mbraedenmcitsa" {
   location                 = azurerm_resource_group.mbraedenmcitsa.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
+}
 
   site_config {    
     always_on = true
