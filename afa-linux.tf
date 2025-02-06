@@ -27,9 +27,6 @@ resource "azurerm_storage_account" "mbraedenmcitsa" {
   account_tier             = "Standard"
   account_replication_type = "GRS"
 
-  tags = {
-    environment = "staging"
-
   site_config {    
     always_on = true
     application_stack {
