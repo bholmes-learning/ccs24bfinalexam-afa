@@ -26,5 +26,8 @@ resource "azurerm_storage_account" "bhmcitstorage" {
   location                   = azurerm_resource_group.bhmcitrg01.location
   account_tier               = "Standard"
   account_replication_type   = "GRS"
+  service_plan_id            = azurerm_service_plan.bhmcitstorage.id
+
+site_config {}
 }
 
