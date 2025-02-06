@@ -24,8 +24,8 @@ resource "azurerm_linux_function_app" "bhmcitafalinux01" {
   resource_group_name = azurerm_resource_group.bhmcitrg01.name
   location            = azurerm_resource_group.bhmcitrg01.location
 
-  storage_account_name       = azurerm_storage_account.bhmcitrg01.name
-  storage_account_access_key = azurerm_storage_account.bhmcitrg01.primary_access_key
+  storage_account_name       = azurerm_storage_account.bhmcitsa01.name
+  storage_account_access_key = azurerm_storage_account.bhmcitsa01.primary_access_key
   service_plan_id            = azurerm_service_plan.bhmcitasplinux01.id
 
   site_config {}
