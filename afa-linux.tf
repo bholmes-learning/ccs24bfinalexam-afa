@@ -34,6 +34,4 @@ resource "azurerm_storage_account" "mcitstorageaccount" {
 
   tags = {
     environment = "staging"
-
-  site_config {}
 }
