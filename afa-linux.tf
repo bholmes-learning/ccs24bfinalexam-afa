@@ -32,5 +32,6 @@ resource "azurerm_storage_account" "mbraedenmcitsa" {
     always_on = true
     application_stack {
       current_stack  = "node"
-      node_version = "16-LTS"}
+      node_version = "16-LTS"
+  }
 }
