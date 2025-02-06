@@ -18,6 +18,9 @@ resource "azurerm_linux_function_app" "bhmcitafalinux01" {
   name                = "braedenmcitfunction"
   resource_group_name = azurerm_resource_group.bhmcitrg01.name
   location            = azurerm_resource_group.bhmcitrg01.location
+  service_plan_id     = azurerm_service_plan.bhmcitafalinux01.id
+
+  site_config {}
 }
 
 resource "azurerm_storage_account" "bhmcitstorage" {
@@ -26,8 +29,6 @@ resource "azurerm_storage_account" "bhmcitstorage" {
   location                   = azurerm_resource_group.bhmcitrg01.location
   account_tier               = "Standard"
   account_replication_type   = "GRS"
-  service_plan_id            = azurerm_service_plan.bhmcitstorage.id
-
-site_config {}
+  
 }
 
