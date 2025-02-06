@@ -20,7 +20,7 @@ resource "azurerm_service_plan" "bhmcitasplinux01" {
 }
 
 resource "azurerm_linux_function_app" "bhmcitafalinux01" {
-  name                = "braedenmcitfunction"
+  name                = "braedenmcitlinuxfunction"
   resource_group_name = azurerm_resource_group.bhmcitrg01.name
   location            = azurerm_resource_group.bhmcitrg01.location
 
