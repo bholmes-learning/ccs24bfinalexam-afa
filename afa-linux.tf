@@ -26,7 +26,7 @@ resource "azurerm_linux_function_app" "bhmcitafalinux01" {
 
   storage_account_name       = azurerm_storage_account.bhmcitrg01.name
   storage_account_access_key = azurerm_storage_account.bhmcitrg01.primary_access_key
-  service_plan_id            = azurerm_service_plan.example.id
+  service_plan_id            = azurerm_service_plan.bhmcitasplinux01.id
 
   site_config {}
 }
