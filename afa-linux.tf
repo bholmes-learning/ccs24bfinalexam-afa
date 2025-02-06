@@ -25,7 +25,7 @@ resource "azurerm_linux_function_app" "bhmcitafalinux01" {
   location            = azurerm_resource_group.bhmcitrg01.location
 }
 
-resource "azurerm_storage_account" "mcitstorageaccount" {
+resource "azurerm_storage_account" "mbraedenmcitsa" {
   name                     = "bhstorageaccount"
   resource_group_name      = azurerm_resource_group.mcitbhrg01.name
   location                 = azurerm_resource_group.mcitbhrg01.location
@@ -34,4 +34,5 @@ resource "azurerm_storage_account" "mcitstorageaccount" {
 
   tags = {
     environment = "staging"
+  }
 }
