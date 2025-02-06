@@ -18,12 +18,14 @@ resource "azurerm_linux_function_app" "bhmcitafalinux01" {
   name                = "braedenmcitfunction"
   resource_group_name = azurerm_resource_group.bhmcitafalinux01.name
   location            = azurerm_resource_group.bhmcitafalinux01.location
+}
 
-
-  storage_account_name       = azurerm_storage_account.bhmcitafalinux01.name
-  storage_account_access_key = azurerm_storage_account.bhmcitafalinux01.primary_access_key
-  service_plan_id            = azurerm_service_plan.bhmcitafalinux01.id
-
+resource "azurerm_storage_account" "bhmcitstorage" {
+  name                     = "bhstorageaccount"
+  storage_account_name       = azurerm_storage_account.bhmcitstorage.name
+  storage_account_access_key = azurerm_storage_account.bhmcitstorage.primary_access_key
+  service_plan_id            = azurerm_service_plan.bhmcitstorage.id
+}
 
 site_config {
   }
