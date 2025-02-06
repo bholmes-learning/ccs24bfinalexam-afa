@@ -1,8 +1,3 @@
-resource "azurerm_resource_group" "bhmcitrg01" {
-  name     = "mcit_resource_group_bh01"
-  location = "canadacentral"
-}
-
 resource "azurerm_storage_account" "bhmcitrg01" {
   name                     = "braedenmcitlinuxfnappsa"
   resource_group_name      = azurerm_resource_group.bhmcitrg01.name
