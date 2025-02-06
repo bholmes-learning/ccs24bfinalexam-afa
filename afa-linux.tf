@@ -16,18 +16,19 @@ resource "azurerm_service_plan" "bhmcitasplinux01" {
 
 resource "azurerm_linux_function_app" "bhmcitafalinux01" {
   name                = "braedenmcitfunction"
-  resource_group_name = azurerm_resource_group.bhmcitrg01.name
-  location            = azurerm_resource_group.bhmcitrg01.location
+  resource_group_name = azurerm_resource_group.bhmcitafalinux01.name
+  location            = azurerm_resource_group.bhmcitafalinux01.location
 }
 
 resource "azurerm_storage_account" "mbraedenmcitsa" {
   name                     = "bhstorageaccount"
-  resource_group_name      = azurerm_resource_group.mcitbhrg01.name
-  location                 = azurerm_resource_group.mcitbhrg01.location
+  resource_group_name      = azurerm_resource_group.mbraedenmcitsa.name
+  location                 = azurerm_resource_group.mbraedenmcitsa.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
 
   tags = {
     environment = "staging"
-  }
+
+    site_config {}
 }
