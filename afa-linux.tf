@@ -18,20 +18,13 @@ resource "azurerm_linux_function_app" "bhmcitafalinux01" {
   name                = "braedenmcitfunction"
   resource_group_name = azurerm_resource_group.bhmcitafalinux01.name
   location            = azurerm_resource_group.bhmcitafalinux01.location
-}
 
-resource "azurerm_storage_account" "mbraedenmcitsa" {
-  name                     = "bhstorageaccount"
-  resource_group_name      = azurerm_resource_group.mbraedenmcitsa.name
-  location                 = azurerm_resource_group.mbraedenmcitsa.location
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-}
 
-site_config {    
-    always_on = true
-    application_stack {
-      current_stack  = "node"
-      node_version = "16-LTS"
+  storage_account_name       = azurerm_storage_account.bhmcitafalinux01.name
+  storage_account_access_key = azurerm_storage_account.bhmcitafalinux01.primary_access_key
+  service_plan_id            = azurerm_service_plan.bhmcitafalinux01.id
+
+
+site_config {
   }
 }
